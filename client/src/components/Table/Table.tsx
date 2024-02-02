@@ -9,6 +9,8 @@ const Table:React.FC = () => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [selectedAssessmentId, setSelectedAssessmentId] = useState(null);
   const [showDeleteImage, setShowDeleteImage] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(10);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -69,6 +71,12 @@ const Table:React.FC = () => {
     setSelectedAssessmentId(null);
   };
 
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = assessments.slice(indexOfFirstItem, indexOfLastItem);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
 
   return (
     <div className="table-container">
@@ -80,8 +88,10 @@ const Table:React.FC = () => {
         </div>
     </div>
     <div className="right-ref">
-<div className="pagintion-controller-counter">1  of  1</div>
-<div className="pagintion-controller">
+    <div className="pagintion-controller-counter">
+          {`${indexOfFirstItem + 1} - ${Math.min(indexOfLastItem, assessments.length)} of ${assessments.length}`}
+        </div>
+{/* <div className="pagintion-controller">
 
     <div className="left-caret">
     <img src="/caret-left.svg" alt="" />
@@ -92,8 +102,15 @@ const Table:React.FC = () => {
 </div>
 
   
-</div>
-
+</div> */}
+  <div className="pagintion-controller">
+          <div className="left-caret" onClick={() => paginate(currentPage - 1)}>
+            <img src="/caret-left.svg" alt="" />
+          </div>
+          <div className="right-caret" onClick={() => paginate(currentPage + 1)}>
+            <img src="/caret-right.svg" alt="" />
+          </div>
+        </div>
     </div>
    </div>
 
@@ -116,7 +133,7 @@ const Table:React.FC = () => {
  </div>
 
    {/**table contents */}
-   {assessments.map((assessment) => (
+   {currentItems.map((assessment) => (
         <div className="table-content" key={assessment._id}>
           <div className="box-name-content">
             <input type="checkbox" />
