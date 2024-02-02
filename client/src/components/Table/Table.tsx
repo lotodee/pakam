@@ -75,7 +75,11 @@ const Table:React.FC = () => {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = assessments.slice(indexOfFirstItem, indexOfLastItem);
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const paginate = (pageNumber) => {
+    if (pageNumber > 0 && pageNumber <= Math.ceil(assessments.length / itemsPerPage)) {
+      setCurrentPage(pageNumber);
+    }
+  };
 
 
   return (
@@ -89,8 +93,8 @@ const Table:React.FC = () => {
     </div>
     <div className="right-ref">
     <div className="pagintion-controller-counter">
-          {`${indexOfFirstItem + 1} - ${Math.min(indexOfLastItem, assessments.length)} of ${assessments.length}`}
-        </div>
+  {`${Math.min(indexOfFirstItem + 1, assessments.length)} - ${Math.min(indexOfLastItem, assessments.length)} of ${assessments.length}`}
+</div>
 {/* <div className="pagintion-controller">
 
     <div className="left-caret">
