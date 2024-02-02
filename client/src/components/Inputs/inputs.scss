@@ -1,0 +1,55 @@
+.input-container{
+    display: flex;
+    flex-direction: column;
+  width: 420px;
+
+    .label{
+       margin-bottom: 5px;
+       font-family: 'Raleway';
+       font-weight: 500;
+       font-size: 14px;
+       line-height: 22px;
+       letter-spacing: 0.25px;
+       color: rgba(34, 45, 51, 1);
+
+    }
+    .input-with-icon-container{
+border: 2px solid rgba(229, 231, 235, 1);
+height: 45px;
+padding: 0px 17px ;
+border-radius: 8px;
+display: flex;
+justify-content: space-between;
+
+        input{
+            border: none;
+            outline: none;
+            width: 420px;
+      
+font-size: 19px;
+
+            &::placeholder{
+                font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0.75px;
+  color: rgba(34, 45, 51, 1);
+            }
+            img{
+                cursor: pointer;
+            }
+        }
+
+    }
+    .lower-label{
+     margin-top: -1px;
+        font-family: 'Raleway';
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: 0.25px;
+        color: rgba(194, 194, 194, 1)
+    }
+ 
+}

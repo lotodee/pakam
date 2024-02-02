@@ -17,3 +17,11 @@ Thumbs.db
 # Optional: Config files
 *.config.js
 
+# Yarn
+.yarn/
+yarn-error.log
+yarn.lock
+.pnp.*
+
+# Generated files
+*.pnp.js

@@ -1,0 +1,277 @@
+.table-container {
+
+    background-color: white;
+    padding: 10px;
+    width: 75vw;
+    padding-right: 30px;
+  box-shadow: 0px -1px 0px 0px rgba(229, 229, 229, 1) inset;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+.refresh-pag-container{
+   
+height: 44px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+border-bottom: 1px solid rgba(229, 229, 229, 1);
+.left-ref{
+    display: flex;
+   gap: 5px;
+    align-items: center;
+height: 20px;
+    .ref-img{
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+    .ref-text{
+  
+    color:rgba(70, 79, 84, 1);
+    font-size: 18px;
+    font-weight: 600;
+    font-family:'Raleway';
+    line-height: 28px;
+    letter-spacing: 0.75px;
+    
+    }
+}
+.right-ref{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    .pagintion-controller-counter{
+       
+    }
+    .pagintion-controller{
+        display: flex;
+gap: 20px;
+        .left-caret,.right-caret{
+
+border-radius: 100px;
+width: 24px;
+height: 24px;
+cursor: pointer;
+&:hover{
+    background-color:transparent rgba(70, 79, 84, 1);
+    border: 1px solid rgba(70, 79, 84, 1);
+    opacity: 50%;
+}
+img{
+    z-index: -999;
+}
+        }
+     
+    }
+}
+
+}
+// table header scssss
+.table-header{
+    display: flex;
+    justify-content: space-between;
+    height: 44px;
+    border-bottom: 1px solid rgba(229, 229, 229, 1);
+    align-items: center;
+    .box-name-header{
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        color:rgba(34, 45, 51, 1);
+        font-family: 'Raleway';
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22.4px;
+    }
+    .description-header, .quantity-header{
+        color:rgba(34, 45, 51, 1);
+        font-family: 'Raleway';
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22.4px;
+    }
+    
+    .action-header{
+   
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:rgba(34, 45, 51, 1);
+    font-family: 'Raleway';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22.4px;
+    }
+
+}
+
+
+// table content scss
+
+.table-content{
+    display: flex;
+    justify-content: space-between;
+    height: 62px;
+    border-bottom: 1px solid rgba(229, 229, 229, 1);
+    align-items: center;
+    .box-name-content{
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      .name{
+        color:rgba(70, 79, 84, 1);
+        font-family: 'Raleway';
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        width: 200px;
+      }
+    }
+    .description-content,
+    .quantity-content {
+      color: rgba(70, 79, 84, 1);
+      font-family: 'Raleway';
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      display: flex;
+      width: 200px;
+      text-align: center;
+     
+      align-items: center; /* Align items vertically in the center */
+      justify-content: flex-start; /* Align content horizontally to the start */
+      white-space: nowrap; /* Prevent text from wrapping */
+      overflow: hidden; /* Hide any overflowed content */
+      text-overflow: ellipsis; /* Display an ellipsis (...) for overflowed text */
+    }
+    .action-content{
+   
+    width: 200px;
+    display: flex;
+align-items: center;
+justify-content:center;
+gap: 25px;
+    .update{
+      background: linear-gradient(178.54deg, #008300 -24.78%, #005700 98.76%),
+        linear-gradient(0deg, #008300, #008300);
+        border: 1px solid;
+
+        border-image-source: linear-gradient(178.54deg, #008300 -24.78%, #005700 98.76%);
+        
+        
+        width: 86px;
+        height: 34px;
+        border: none;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        cursor: pointer;
+    }
+    .delete{
+       
+        width: 86px;
+        height: 34px;
+        border: 1px solid rgba(30, 30, 30, 1);
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(30, 30, 30, 1);
+        cursor: pointer;
+    }
+
+    }
+
+}
+
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100vw; 
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999; 
+    
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+  }
+
+  .modal-content {
+    width: 532px;
+    height: 240px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    
+    flex-direction: column;
+    gap: 50px;
+    .delete-text{
+        color: rgba(0, 87, 0, 1);
+        font-family: 'Raleway';
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 33.6px;
+    }
+    .delete-q{
+        color: rgba(70, 79, 84, 1);
+        font-family: 'Raleway';
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 28px;
+        letter-spacing: -0.01px;
+        span{
+            color: rgba(70, 79, 84, 1);
+            font-family: 'Raleway';
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 28px;
+            letter-spacing: -0.01px;
+        }
+    }
+    .delete-controller{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+  margin-left: auto;
+        .delete-cancel{
+            border: 1px solid rgba(0, 87, 0, 1);
+            color: rgba(0, 87, 0, 1);
+            width: 113px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .delete-delete{
+background-color: rgba(218, 24, 35, 1);
+color: white;
+width: 113px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+       
+    }
+  }
+  }
+  

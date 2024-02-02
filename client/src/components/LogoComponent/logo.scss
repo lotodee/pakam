@@ -1,0 +1,24 @@
+.logo{
+    width: 110px;
+    height: 55px;
+
+    @media (max-width: 768px) {
+  
+    
+     margin-top: 30px;
+        
+            
+          
+        
+        }
+        
+}
+
+.create-text{
+    font-family: 'Raleway';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 38px;
+    letter-spacing: 0.2px;
+    color: rgba(34, 45, 51, 1);
+}

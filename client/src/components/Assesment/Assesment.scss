@@ -1,0 +1,104 @@
+
+.assesment-Container{
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+.assesment-body{
+    background-color: rgb(247, 247, 244, 1);
+    height: 1024px;
+    width: 1440px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 20px;
+flex-direction: column;
+.assesment-Wrapper{
+   
+    width: 1000px;
+    height: 500px;
+    background-color: white;
+    border-radius: 15px;
+    padding:40px 30px;
+display: flex;
+gap: 30px;
+
+flex-direction: column;
+
+@media (max-width: 768px) {
+  
+    
+   
+    align-items: center;
+    
+  
+
+}
+
+.top-text{
+    color: rgba(34, 45, 51, 1);
+    font-family: 'Raleway';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 38px;
+    letter-spacing: 0.2px;
+}
+.assesment-input-container{
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+
+
+    @media (max-width: 768px) {
+  
+    
+        flex-direction: column;
+        align-items: center;
+        
+      
+  
+  }
+  
+
+    .input-left{
+display: flex;
+flex-direction: column;
+gap: 20px;
+
+    }
+    .input-right{
+        
+    }
+
+}
+.submit-button{
+    background-color: red;
+    width: 136px;
+    height: 40px;
+    color: rgba(255,255,255,1);
+    border-radius: 8px;
+    background: linear-gradient(to right, rgba(0, 131, 0, 1), rgba(0, 87, 0, 1));
+
+@media (max-width: 768px) {
+  
+    
+padding: 20px;
+display: flex;
+align-items: center;
+justify-content: center;
+
+    
+  
+
+}
+
+
+}
+}
+
+}
+
+}

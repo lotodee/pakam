@@ -1,0 +1,42 @@
+.login-and-forgot-section{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+        button{
+            background-color: rgba(0, 87, 0, 1);
+            padding: 14px, 0px, 14px, 0px;
+            width:420px ;
+            height: 50px;
+    border-radius: 12px;
+            
+            border: none;
+            color: white;
+            font-size: 16px;
+            font-family: 'Raleway';
+            font-weight: 600;
+            line-height: 22px;
+            cursor: pointer;
+            &:hover{
+              opacity: 50%;
+            }
+        }
+        .forgot-password{
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+    font-family: 'Raleway';
+    letter-spacing: 0.25px;
+    .forgot-left{
+        color: rgba(70, 79, 84, 1);
+        font-weight: 400;
+        cursor: pointer;
+    }
+    
+    .forgot-right{
+        color:rgba(0, 87, 0, 1);
+        font-weight: 500;
+        cursor: pointer;
+    }
+        }
+    }

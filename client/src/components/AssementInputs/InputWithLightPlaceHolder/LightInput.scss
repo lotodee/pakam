@@ -1,0 +1,35 @@
+
+        .main-input-container{
+            display: flex;
+            flex-direction: column;
+            
+            
+                        .assesment-label{
+                            margin-bottom: 2px;
+                            font-family: 'Raleway';
+                            font-weight: 500;
+                            font-size: 14px;
+                            line-height: 22px;
+                            letter-spacing: 0.25px;
+                            color: rgba(34, 45, 51, 1);
+                        }
+                        .light-input{
+                            border: 1px solid rgba(0, 87, 0, 1);
+                            outline: none;
+                            width: 420px;
+                            border-radius: 10px;
+                 height: 45px;
+                      padding-left:20px;
+                font-size: 19px;
+                
+                            &::placeholder{
+                                font-family: 'Raleway', sans-serif;
+                  font-weight: 600;
+                  font-size: 16px;
+                  line-height: 28px;
+                  letter-spacing: 0.75px;
+                  
+                  color:rgba(194, 194, 194, 1);
+                            }
+                        }
+                    }

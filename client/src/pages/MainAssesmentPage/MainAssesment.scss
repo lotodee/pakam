@@ -1,0 +1,59 @@
+
+.main-assesment-wrapper{
+
+display: flex;
+    .left-side{
+        height: 100vh;
+        background-color: rgba(0, 87, 0, 1);
+        width: 20vw;
+    }
+    .right-side{
+       
+        padding: 30px;
+        width: 95vw;
+        height: 100vh;
+        background-color: rgba(247, 247, 244, 1);
+      .right-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        width: 77vw;
+        gap: 20px;
+        
+        p{
+
+            color:rgba(34, 45, 51, 1);
+      
+            font-family: 'Raleway';
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 38px;
+            margin-top: 0.2px;
+            margin-right: auto;
+        }
+        button{
+            background-color: rgba(0, 87, 0, 1);
+            width: 125px;
+            height: 38px;
+            margin-left: auto;
+            border: none;
+            border-radius: 9px;
+            
+            font-size: 14px;
+            font-family: 'Raleway';
+            font-weight: 600;
+            line-height: 22px;
+            color: white;
+            margin-bottom: 20px;
+        }
+        .table{
+         border-radius: 10px;
+       
+        }
+      }
+
+       
+    }
+}
