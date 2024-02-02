@@ -68,10 +68,23 @@ display: flex;
 flex-direction: column;
 gap: 20px;
 
+
     }
     .input-right{
         
     }
+
+}
+
+h4 {
+    color: red;
+    font-size: 14px;
+    margin-top: -1px;
+  }
+  .h4-light{
+    margin-top: 15px;
+  }
+}
 
 }
 .submit-button{
@@ -89,15 +102,12 @@ padding: 20px;
 display: flex;
 align-items: center;
 justify-content: center;
-
+margin-right: auto;
     
   
 
 }
 
-
-}
-}
 
 }
 

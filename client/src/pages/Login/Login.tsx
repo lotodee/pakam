@@ -5,25 +5,49 @@ import Inputs from '../../components/Inputs/Inputs';
 import Logo from '../../components/LogoComponent/Logo';
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useLogin } from '../../hooks/useLogin';
-import { Link,useNavigate,useLocation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login: React.FC = () => {
   // State for input values
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const navigate =useNavigate()
-  const {user} = useAuthContext()
-  const {login ,error ,isLoading , loggedIn} =useLogin()
+  const navigate = useNavigate();
+  const { user } = useAuthContext();
+  const { login, error, isLoading, loggedIn } = useLogin();
+  const [passwordError, setPasswordError] = useState('');
+
   const handleLogin = async () => {
-    console.log('Username:', username);
-    console.log('Password:', password);
+    // Reset password error
+    setPasswordError('');
+
+    // Check if the username or password is empty
+    if (!username.trim() || !password.trim()) {
+      setPasswordError('Username and password are required.');
+      return;
+    }
+
+    // Check if the password meets the criteria
+    if (password.length < 8 || !/[A-Z]/.test(password)) {
+      setPasswordError('Password must be 8 characters long and include an uppercase letter.');
+      return;
+    }
+
+    // Attempt login
     await login({ username, password });
-    navigate("/")
-    // Add logic for authentication or further processing if needed
+
+    // Check if the login was successful or handle the error
+    if (!loggedIn) {
+      setPasswordError('Invalid credentials. Please try again.');
+    } else {
+      // Redirect to the desired page upon successful login
+      navigate("/");
+    }
   };
-const handleClick = () => {
-  navigate('/retrieve')
-}
+
+  const handleClick = () => {
+    navigate('/retrieve');
+  };
+
   return (
     <div className="login-Container">
       <div className="login-body">
@@ -47,12 +71,18 @@ const handleClick = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
-                <Forgot onClick={handleLogin} className="login-forgot" 
-                logInButtonText="Log In"
-                forgotLeftText="Forgot Password?"
-                forgotRightText="Retrieve Now"
-                handleClick={handleClick}
+                {passwordError && <div className="error-message">{passwordError}</div>}
+                <Forgot
+                  onClick={handleLogin}
+                  className="login-forgot"
+                  logInButtonText="Log In"
+                  forgotLeftText="Forgot Password?"
+                  forgotRightText="Retrieve Now"
+                  handleClick={handleClick}
                 />
+                <Link to="/register" className="link">
+                  <div className="create-account-if">or create account?</div>
+                </Link>
               </div>
             </div>
           </div>

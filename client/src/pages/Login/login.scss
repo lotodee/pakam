@@ -48,7 +48,14 @@ display: flex;
 justify-content: space-between;
 gap: 40px;
 margin-bottom: 20px;
-
+.create-account-if{
+    color:rgba(0, 87, 0, 1);
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
 }

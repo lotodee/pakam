@@ -18,7 +18,7 @@ const BoldInput: React.FC<BoldInputProps> = ({ onChange ,text,placeholder }) => 
         <input
           type="text"
           name="name"
-          placeholder={`${user.firstName}`}
+          placeholder={`${user? user.firstName : ""}`}
           className="bold-input"
           onChange={onChange}
 
