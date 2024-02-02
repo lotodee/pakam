@@ -1,0 +1,19 @@
+# Dependency directories
+node_modules/
+
+# Optional: logs, build output, cache
+logs/
+build/
+.cache/
+
+# Optional: Editor directories
+.vscode/
+.idea/
+
+# Optional: OS or Editor files
+.DS_Store
+Thumbs.db
+
+# Optional: Config files
+*.config.js
+
