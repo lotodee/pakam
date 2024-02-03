@@ -6,18 +6,37 @@ import Logo from '../../components/LogoComponent/Logo';
 import Forgot from '../../components/ForgotComponent/Forgot';
 import { useSignup } from '../../hooks/useSignup.js';
 import { useAuthContext } from '../../hooks/useAuthContext';
+
 const Register: React.FC = () => {
   // State for input values
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [passwordError, setPasswordError] = useState('');
   const { signup, isLoading, error } = useSignup();
   const { user } = useAuthContext();
   const navigate = useNavigate();
+
   // Function to handle form submission
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Reset password error
+    setPasswordError('');
+
+    // Check if any field is empty
+    if (!firstName.trim() || !lastName.trim() || !username.trim() || !password.trim()) {
+      setPasswordError('All fields are required.');
+      return;
+    }
+
+    // Check if the password meets the criteria
+    if (password.length < 8 || !/[A-Z]/.test(password)) {
+      setPasswordError('Password must be 8 characters long and include an uppercase letter.');
+      return;
+    }
+
     // Combine input values into an object
     const userData = {
       firstName,
@@ -25,15 +44,21 @@ const Register: React.FC = () => {
       username,
       password,
     };
+
+    // Call the signup function
     await signup(userData);
+
     // Log the userData object
     console.log('User Data:', userData);
+
+    // Redirect to login page after successful signup
     user && navigate('/login');
-    // Add logic to send userData to your server or perform other actions
   };
+
   const handleClick = () => {
-    navigate('/login')
-  }
+    navigate('/login');
+  };
+
   return (
     <div className="register-Container">
       <div className="body">
@@ -73,14 +98,15 @@ const Register: React.FC = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
+                {passwordError && <div className="error-message">{passwordError}</div>}
               </div>
             </div>
-            <Forgot onClick={handleSubmit} 
+            <Forgot
+              onClick={handleSubmit}
               logInButtonText="Sign In"
               forgotLeftText="Have an Account"
               forgotRightText="Login"
               handleClick={handleClick}
-              
             />
           </div>
         </div>
